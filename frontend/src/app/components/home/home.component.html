@@ -15,8 +15,8 @@
 				</div>
 				<div class="auth">
 					<div class="auth-label">Username</div>
-					<input class="auth-input" name="username" />
-					<button class="auth-button" type="submit">
+					<input class="auth-input" name="username" [(ngModel)]="username" />
+					<button (click)="redirectToChat()" class="auth-button" type="submit">
 						Enter
 					</button>
 				</div>

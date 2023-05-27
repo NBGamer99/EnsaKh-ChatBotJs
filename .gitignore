@@ -21,6 +21,8 @@ yarn-error.log
 *.sublime-workspace
 .vscode
 
+groovy-overview-387922-c1766960099d.json
+
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json

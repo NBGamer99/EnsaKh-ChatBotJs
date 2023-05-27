@@ -1,67 +1,33 @@
 <div class="container">
 	<div class="navbar">
-		<div class="logo">Chatbot</div>
-		<div class="nav-items">
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 1</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 2</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 3</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 3</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 3</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 3</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="chat-index">
-				<span class="chat-title">Chatbot 3</span>
-				<button class="chat-delete-btn" id="delete-chat-btn">
-					<i class="fas fa-trash"></i>
-				</button>
-			</div>
-			<div class="add-chat">+</div>
-		</div>
+		<div class="logo">ChatBot 3000</div>
 	</div>
 	<div class="chat-container">
 		<div class="chat-messages">
-			<div class="message"><div class="user-message">Hello</div></div>
 			<div class="message">
-				<div class="bot-message">Bot Response</div>
+				<div class="bot-message">
+					Hello {{ username | capitalize }}, How can I help you for today ?
+				</div>
 			</div>
+		<div *ngFor="let message of messages">
+			<app-messages [text]="message.text" [date]="message.date" [owner]="message.userOwner" ></app-messages>
+		</div>
 		</div>
 		<div class="chat-input">
-			<input
-				type="text"
-				id="user-input"
-				placeholder="Type your message..."
-			/>
-			<button id="send-btn">Send</button>
+			<label class="search-label">
+				<input
+					[(ngModel)]="textInput"
+					(keyup)="onKey($event)"
+					type="text"
+					name="text"
+					class="input"
+					id="user-input"
+					placeholder="Type here..."
+				/>
+				<button id="send-btn">
+					<i (click)="sendMessage()" class="fas fa-paper-plane"></i>
+				</button>
+			</label>
 		</div>
 	</div>
 </div>
-<script src="script.js"></script>

@@ -1,0 +1,8 @@
+<div class="message">
+	<div *ngIf="!owner" class="bot-message">
+		{{text}}
+	</div>
+</div>
+<div *ngIf="owner" class="message">
+	<div class="user-message">{{text}}</div>
+</div>
