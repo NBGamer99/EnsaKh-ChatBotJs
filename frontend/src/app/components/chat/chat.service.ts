@@ -16,11 +16,18 @@ export class ChatService {
 		}),
 	};
 
+	getMessages(sessionToken: string) {
+		return this.http.get(environment.backend.getMessagesUrl + sessionToken);
+	}
+
 	sendMessage(textMessage: TextMessage) {
 		var reqBody = {
 			projectId: environment.dialogflow.projectId,
 			requestText: textMessage.text,
+			sessionToken: textMessage.sessionToken,
+			dateu: textMessage.dateu,
 		};
+		// console.log("TextMessage :",textMessage);
 		return this.http.post(
 			environment.backend.requestTextUrl,
 			reqBody,

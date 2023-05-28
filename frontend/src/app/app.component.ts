@@ -9,5 +9,4 @@ import { Message } from './components/models/messages.model';
 export class AppComponent {
 	title = 'frontend';
 	messages = [];
-
 }

@@ -6,15 +6,19 @@
 		<div class="chat-messages">
 			<div class="message">
 				<div class="bot-message">
-					Hello {{ username | capitalize }}, How can I help you for today ?
+					Hello <span style="font-weight: bold;" >{{ username | capitalize }}</span>, How can I help you for today ?
 				</div>
 			</div>
 		<div *ngFor="let message of messages">
 			<app-messages [text]="message.text" [date]="message.date" [owner]="message.userOwner" ></app-messages>
 		</div>
+	</div>
+
+	<div class="chat-input">
+		<div class="error-message" [class.show]="showError" [class.hidden]="!showError">
+			🖕 Write something first dumbass ?
 		</div>
-		<div class="chat-input">
-			<label class="search-label">
+		<label class="search-label">
 				<input
 					[(ngModel)]="textInput"
 					(keyup)="onKey($event)"
@@ -23,6 +27,7 @@
 					class="input"
 					id="user-input"
 					placeholder="Type here..."
+					required=""
 				/>
 				<button id="send-btn">
 					<i (click)="sendMessage()" class="fas fa-paper-plane"></i>

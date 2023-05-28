@@ -16,4 +16,5 @@ export class HomeComponent {
 			this.router.navigate(['/chat', this.username]);
 		}
 	}
+
 }

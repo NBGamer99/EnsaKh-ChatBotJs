@@ -11,7 +11,8 @@ export const environment = {
 	backend: {
 	  baseUrl: "http://localhost:3000/",
 	  apiUrl: "http://localhost:3000/api/",
-	  requestTextUrl: "http://localhost:3000/api/requestText/"
+	  requestTextUrl: "http://localhost:3000/api/requestText/",
+	  getMessagesUrl: "http://localhost:3000/api/chat/" // Add this line
 	}
   };
 

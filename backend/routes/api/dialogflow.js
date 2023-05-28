@@ -14,6 +14,7 @@ const sessionPath = sessionClient.projectAgentSessionPath(
     projectId,
     sessionId
 );
+
 const intentRequest = {
     session: sessionPath,
     queryInput: {
@@ -31,6 +32,7 @@ const intentRequest = {
 const responses = await sessionClient.detectIntent(intentRequest);
 const result = responses[0].queryResult;
 
+// console.log(result);
 return await {
         "Query": result.queryText,
         "Response": result.fulfillmentText,
