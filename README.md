@@ -89,6 +89,9 @@ mongod
 
 ### DEMO
 The chatbot features:
+
+![Live Demo](./output.gif)
+
 - Real-time conversation with AI responses
 - Session-based chat history
 - User-friendly interface with message bubbles
